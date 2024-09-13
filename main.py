@@ -1,4 +1,4 @@
-def zaokraglij(x, y):
+def my_own_round_function(x, y):
     if x == float(x) and y == int(y):
         if y < 0:
             x = str(x)
@@ -43,3 +43,15 @@ def zaokraglij(x, y):
             return wynik
     else:
         return 'Wrong used function'
+
+def check_if_works_correctly(x,y):
+    if my_own_round_function(x,y) == round(x,y):
+        return True
+    else:
+        return False
+
+for i in range(10):
+    print(check_if_works_correctly(3.14159, i))
+    #result: True, True, True, True, True, True, True, True, True, True
+
+# Everything works correctly
