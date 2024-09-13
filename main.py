@@ -3,44 +3,44 @@ def my_own_rounding_function(x, y):
         if y < 0:
             x = str(x)
             x = x.split(sep=".", maxsplit=1)
-            sprawdzana = float(x[0][y])
-            if sprawdzana >=5:
-                wynik = int(x[0][:y])+1
-                wynik = str(wynik)+(-y*"0")
-                wynik = float(wynik)
+            checked = float(x[0][y])
+            if checked >=5:
+                result = int(x[0][:y])+1
+                result = str(result)+(-y*"0")
+                result = float(result)
             else:
-                wynik = float(x[0][:y]+(-y*"0"))
-            return wynik
+                result = float(x[0][:y]+(-y*"0"))
+            return result
         elif y == 0:
             x = str(x)
             x = x.split(sep=".", maxsplit=1)
-            calosc = float(x[0])
-            reszta = int(x[1][:y+1])
-            sprawdzana = int(x[1][y])
-            if sprawdzana >= 5:
-                calosc += 1
-            return calosc
+            integer = float(x[0])
+            rest = int(x[1][:y+1])
+            checked = int(x[1][y])
+            if checked >= 5:
+                integer += 1
+            return integer
         elif y != 0:
             try:
                 x = str(x)
                 x = x.split(sep=".", maxsplit=1)
-                calosc = x[0]
-                reszta = int(x[1][:y])
-                sprawdzana = int(x[1][y])
-                if sprawdzana >= 5:
-                    reszta += 1
-                wynik = float(f'{calosc}.{reszta}')
-                return wynik
+                integer = x[0]
+                rest = int(x[1][:y])
+                checked = int(x[1][y])
+                if checked >= 5:
+                    rest += 1
+                result = float(f'{integer}.{rest}')
+                return result
             except IndexError:
                 x[0] = int(x[0])
                 x[1] = int(x[1])
-                wynik = float(f'{x[0]}.{x[1]}')
-                return wynik
+                result = float(f'{x[0]}.{x[1]}')
+                return result
         else:
             x = str(x)
             x = x.split(sep=".", maxsplit=1)
-            wynik = float(x[0])
-            return wynik
+            result = float(x[0])
+            return result
     else:
         return 'Wrong used function'
 
