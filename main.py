@@ -1,4 +1,4 @@
-def my_own_round_function(x, y):
+def my_own_rounding_function(x, y):
     if x == float(x) and y == int(y):
         if y < 0:
             x = str(x)
@@ -45,7 +45,7 @@ def my_own_round_function(x, y):
         return 'Wrong used function'
 
 def check_if_works_correctly(x,y):
-    if my_own_round_function(x,y) == round(x,y):
+    if my_own_rounding_function(x,y) == round(x,y):
         return True
     else:
         return False
